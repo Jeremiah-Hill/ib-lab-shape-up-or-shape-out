@@ -6,7 +6,7 @@ The purpose of this lab is to help solidify the OOP Class inheritance concepts y
 
 ## Steps
 ### Setup
-* Create an index.html file, script.js file, and a css file for styling
+* [x] Create an index.html file, script.js file, and a css file for styling
     * You can optionally use Bootstrap to also add style to your webpage
 
 ### HTML Objectives
