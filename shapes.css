@@ -11,25 +11,19 @@ body {
     background-color: #eee;
     padding: 2%;
 }
-#controls > div {
+.button-row {
+    display: flex;
     background-color: blue;
 }
 }
-#controls > div > div > button {
+.button-row > button {
+    display: flex;
     margin: 2%;
     padding: 2%;
     background-color: #ccc;
     font-size: 2em;
     cursor: pointer;
 }
-
-/* #output {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #93a1a1;
-    background-color: #eee;
-    margin-top: 2%;
-} */
 
 #canvas {
     position: relative;
@@ -39,15 +33,12 @@ body {
     /* margin: 2%; */
     background-color: #c5d4d4;
 }
-
-/* #info {
-    display: inline-block;
-    min-width: 100px;
-    min-height: 100px;
-    margin: 2%;
-    background-color: #c5d4d4;
-} */
-
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: blue;
+    border: 2px solid black;
+}
 .square {
     position: absolute;
     background: red;
