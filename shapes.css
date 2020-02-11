@@ -3,48 +3,53 @@
 }
 
 body {
-    width: 968px;
-    margin: 2% auto;
-    padding: 2px;
     border: 1px solid black;
 }
 
 #controls {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
     border: 1px solid #93a1a1;
     background-color: #eee;
     padding: 2%;
 }
-#controls > div > button {
+#controls > div {
+    background-color: blue;
+}
+}
+#controls > div > div > button {
     margin: 2%;
-    padding: 1%;
+    padding: 2%;
     background-color: #ccc;
     font-size: 2em;
     cursor: pointer;
 }
 
-#output {
+/* #output {
     display: flex;
     justify-content: space-between;
     border: 1px solid #93a1a1;
     background-color: #eee;
     margin-top: 2%;
-}
+} */
 
 #canvas {
-    display: inline-block;
-    width: 500px;
-    height: 500px;
-    margin: 2%;
+    position: relative;
+    /* display: inline-block; */
+    width: 600px;
+    height: 600px;
+    /* margin: 2%; */
     background-color: #c5d4d4;
 }
 
-#info {
+/* #info {
     display: inline-block;
     min-width: 100px;
     min-height: 100px;
     margin: 2%;
     background-color: #c5d4d4;
+} */
+
+.square {
+    position: absolute;
+    background: red;
+    border: 2px solid black;
 }
