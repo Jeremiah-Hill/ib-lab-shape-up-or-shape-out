@@ -1,5 +1,6 @@
 * {
     font-family: monospace;
+    font-size: 1.05em;
 }
 
 body {
@@ -35,12 +36,22 @@ body {
 
 #info {
     float: right;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     position: relative;
     margin-top: 10px;
     min-width: 300px;
     min-height: 600px;
     background-color: lightgrey;
+    font-size: 1.2em;
 }
+#info > div {
+    margin: 2%;
+    margin-left: 5%;
+    padding: 2%;
+}
+
 /* Circles should be purple, Squares should be red, Triangles should be yellow, and Rectangles should be green */
 .circle {
     position: absolute;

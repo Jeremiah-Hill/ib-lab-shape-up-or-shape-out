@@ -1,6 +1,12 @@
 console.log("Loading..");
 
-const CANVAS = document.getElementById('canvas');
+const CANVAS = document.getElementById('canvas'),
+    infShape = document.getElementById('infShape');
+    infWidth = document.getElementById('infWidth');
+    infHeight = document.getElementById('infHeight');
+    infRadius = document.getElementById('infRadius');
+    infArea = document.getElementById('infArea');
+    infPerimeter = document.getElementById('infPerimeter');
 
 // circle listener.
 document.getElementById('circle-btn').addEventListener('click', () => {
@@ -11,6 +17,17 @@ document.getElementById('circle-btn').addEventListener('click', () => {
 document.getElementById('square-btn').addEventListener('click', () => {
     let l = document.getElementById('square-length').value;
     new Square(l);
+});
+// triangle listener.
+document.getElementById('triangle-btn').addEventListener('click', () => {
+    let h = document.getElementById('triangle-height').value;
+    new Triangle(h);
+});
+// rectangle listener.
+document.getElementById('rectangle-btn').addEventListener('click', () => {
+    let h = document.getElementById('rectangle-height').value;
+    let l = document.getElementById('rectangle-length').value;
+    new Rectangle(h, l);
 });
 
 class Shape {
@@ -58,12 +75,20 @@ class Circle extends Shape {
         this.r = this.inputCheck(this.name, r);
         this.h = this.r * 2;
         this.shape.style.height = this.h + 'px';
-        this.w = this.r * 2;
-        this.shape.style.width = this.w + 'px';
+        this.shape.style.width = this.h + 'px';
         this.shape.style.top = this.offset(this.h) + 'px';
-        this.shape.style.left = this.offset(this.w) + 'px';
+        this.shape.style.left = this.offset(this.h) + 'px';
         this.shape.classList.add('circle');
         this.shapeAppend();
+        this.shape.addEventListener('click', () => this.inform());
+    }
+    inform() {
+        infShape.innerText = "Shape: " + this.name;
+        infWidth.innerText = "Width: " + this.h;
+        infHeight.innerText = "Height: " + this.h;
+        infRadius.innerText = "Radius: " + this.r;
+        infArea.innerText = "Area: " + (Math.PI * Math.pow(this.r, 2)).toFixed(3);
+        infPerimeter.innerText = "Perimeter: " + (2 * Math.PI * parseInt(this.r)).toFixed(3);
     }
     
 }
