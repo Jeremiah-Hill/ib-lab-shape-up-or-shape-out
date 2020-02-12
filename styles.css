@@ -1,27 +1,36 @@
-* {
-    font-family: monospace;
+body {
+    background-color: black;
 }
 
 #container {
-    display: flex;
-    border: 1px solid black;
+    margin: 2% auto;
+    width: 960px;
+    border: 2px solid white;
 }
 
 #controls {
-    width: 600px;
+    position: relative;
     background-color: lightgrey;
     border: 1px solid grey;
 }
 
 #canvas {
+    float: left;
     position: relative;
+    margin: 2%;
+    padding: 0;
     width: 600px;
     height: 600px;
-    background-color: lightgrey;
+    background-color: white;
 }
 
 #info {
-    width: 300px;
+    float: right;
+    position: relative;
+    margin: 2%;
+    min-width: 200px;
+    min-height: 600px;
+    background-color: lightgrey;
 }
 /* Circles should be purple, Squares should be red, Triangles should be yellow, and Rectangles should be green */
 .circle {
@@ -35,7 +44,7 @@
     background: red;
     border: 2px solid black;
 }
-.triangle-tl {
+.triangle {
     border-top: 100px solid yellow;
     border-right: 100px solid transparent;
 }

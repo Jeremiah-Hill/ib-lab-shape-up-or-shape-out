@@ -66,5 +66,14 @@ class Square extends Shape {
         return Math.abs((Math.floor(Math.random() * (x * 6))) - x - 4) + 'px';
     }
 }
-
+class Rectangle extends Shape {
+    constructor(l, w) {
+        super();
+    }
+}
+class Triangle extends Shape {
+    constructor(h) {
+        super();
+    }
+}
 console.log("Loaded.");
