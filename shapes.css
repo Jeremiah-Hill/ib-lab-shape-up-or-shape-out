@@ -2,45 +2,43 @@
     font-family: monospace;
 }
 
-body {
+#container {
+    display: flex;
     border: 1px solid black;
 }
 
 #controls {
-    border: 1px solid #93a1a1;
-    background-color: #eee;
-    padding: 2%;
-}
-.button-row {
-    display: flex;
-    background-color: blue;
-}
-}
-.button-row > button {
-    display: flex;
-    margin: 2%;
-    padding: 2%;
-    background-color: #ccc;
-    font-size: 2em;
-    cursor: pointer;
+    width: 600px;
+    background-color: lightgrey;
+    border: 1px solid grey;
 }
 
 #canvas {
     position: relative;
-    /* display: inline-block; */
     width: 600px;
     height: 600px;
-    /* margin: 2%; */
-    background-color: #c5d4d4;
+    background-color: lightgrey;
 }
+
+#info {
+    width: 300px;
+}
+/* Circles should be purple, Squares should be red, Triangles should be yellow, and Rectangles should be green */
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: blue;
+    background: purple;
     border: 2px solid black;
 }
 .square {
     position: absolute;
     background: red;
     border: 2px solid black;
+}
+.triangle-tl {
+    border-top: 100px solid yellow;
+    border-right: 100px solid transparent;
+}
+.rectangle {
+    background: green;
 }
