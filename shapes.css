@@ -2,66 +2,47 @@
     font-family: monospace;
 }
 
-body {
-    background-color: black;
-}
-
 #container {
-    margin: 2% auto;
-    width: 960px;
+    display: flex;
+    border: 1px solid black;
 }
 
 #controls {
-    position: relative;
+    width: 600px;
     background-color: lightgrey;
     border: 1px solid grey;
 }
-#controls > div > * {
+#controls > * {
     margin: 1%;
     padding: 1%;
 }
-#controls > div > button {
-    float: right;
-}
 
 #canvas {
-    float: left;
     position: relative;
-    margin-top: 10px;
     width: 600px;
     height: 600px;
-    background-color: white;
+    background-color: lightgrey;
 }
 
 #info {
-    float: right;
-    position: relative;
-    margin-top: 10px;
-    min-width: 300px;
-    min-height: 600px;
-    background-color: lightgrey;
+    width: 300px;
 }
 /* Circles should be purple, Squares should be red, Triangles should be yellow, and Rectangles should be green */
 .circle {
     position: absolute;
     border-radius: 50%;
     background: purple;
-    opacity: 50%;
     border: 2px solid black;
 }
 .square {
     position: absolute;
     background: red;
-    opacity: 50%;
     border: 2px solid black;
 }
-.triangle {
+.triangle-tl {
     border-top: 100px solid yellow;
-    opacity: 50%;
     border-right: 100px solid transparent;
 }
 .rectangle {
     background: green;
-    opacity: 50%;
-    border: 2px solid black;
 }
