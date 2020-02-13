@@ -147,6 +147,22 @@ class Rectangle extends Shape {
 class Triangle extends Shape {
     constructor(h) {
         super();
+        this.name = 'triangle';
+        this.h = this.inputCheck(this.name, h);
+        this.shape.style.borderBottom = this.h + 'px solid yellow';
+        this.shape.style.borderRight = this.h + 'px solid transparent';
+        this.shape.style.top = this.offset(this.h) + 'px';
+        this.shape.style.left = this.offset(this.h) + 'px';
+        this.shape.classList.add('triangle');
+        this.shapeAppend();
+    }
+    inform() {
+        infShape.innerText = "Shape: " + this.name;
+        infWidth.innerText = "Width: " + this.h;
+        infHeight.innerText = "Height: " + this.h;
+        infRadius.innerText = "Radius: N/A";
+        infArea.innerText = "Area: " + ((this.h * this.h)/ 2);
+        infPerimeter.innerText = "Perimeter: " + ((Math.sqrt(2) * this.h) + (this.h  * 2));
     }
 }
 console.log("Loaded.");
