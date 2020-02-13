@@ -33,6 +33,8 @@ document.getElementById('rectangle-btn').addEventListener('click', () => {
 class Shape {
     constructor() {
         this.shape = document.createElement('div');
+        this.shape.addEventListener('click', () => this.inform());
+        this.shape.addEventListener('dblclick', () => this.shape.remove());
     }
     inputCheck(name, x) {
         let def;
@@ -80,7 +82,7 @@ class Circle extends Shape {
         this.shape.style.left = this.offset(this.h) + 'px';
         this.shape.classList.add('circle');
         this.shapeAppend();
-        this.shape.addEventListener('click', () => this.inform());
+        
     }
     inform() {
         infShape.innerText = "Shape: " + this.name;
@@ -90,7 +92,6 @@ class Circle extends Shape {
         infArea.innerText = "Area: " + (Math.PI * Math.pow(this.r, 2)).toFixed(3);
         infPerimeter.innerText = "Perimeter: " + (2 * Math.PI * parseInt(this.r)).toFixed(3);
     }
-    
 }
 class Square extends Shape {
     constructor(l) {
@@ -103,6 +104,14 @@ class Square extends Shape {
         this.shape.style.left = this.offset(this.l) + 'px';
         this.shape.classList.add('square');
         this.shapeAppend();
+    }
+    inform() {
+        infShape.innerText = "Shape: " + this.name;
+        infWidth.innerText = "Width: " + this.l;
+        infHeight.innerText = "Height: " + this.l;
+        infRadius.innerText = "Radius: N/A";
+        infArea.innerText = "Area: " + (Math.pow(this.l, 2));
+        infPerimeter.innerText = "Perimeter: " + (4 * this.l);
     }
 }
 class Rectangle extends Shape {
