@@ -2,11 +2,11 @@ console.log("Loading..");
 
 const CANVAS = document.getElementById('canvas'),
     infShape = document.getElementById('infShape');
-    infWidth = document.getElementById('infWidth');
-    infHeight = document.getElementById('infHeight');
-    infRadius = document.getElementById('infRadius');
-    infArea = document.getElementById('infArea');
-    infPerimeter = document.getElementById('infPerimeter');
+infWidth = document.getElementById('infWidth');
+infHeight = document.getElementById('infHeight');
+infRadius = document.getElementById('infRadius');
+infArea = document.getElementById('infArea');
+infPerimeter = document.getElementById('infPerimeter');
 
 // circle listener.
 document.getElementById('circle-btn').addEventListener('click', () => {
@@ -25,9 +25,9 @@ document.getElementById('triangle-btn').addEventListener('click', () => {
 });
 // rectangle listener.
 document.getElementById('rectangle-btn').addEventListener('click', () => {
-    let h = document.getElementById('rectangle-height').value;
     let l = document.getElementById('rectangle-length').value;
-    new Rectangle(h, l);
+    let w = document.getElementById('rectangle-width').value;
+    new Rectangle(l, w);
 });
 
 class Shape {
@@ -82,7 +82,7 @@ class Circle extends Shape {
         this.shape.style.left = this.offset(this.h) + 'px';
         this.shape.classList.add('circle');
         this.shapeAppend();
-        
+
     }
     inform() {
         infShape.innerText = "Shape: " + this.name;
@@ -117,6 +117,31 @@ class Square extends Shape {
 class Rectangle extends Shape {
     constructor(l, w) {
         super();
+        this.name = 'rectangle';
+        this.l = this.inputCheck(this.name, l);
+        this.w = this.inputCheck(this.name, w);
+        this.getRect();
+        this.shape.style.height = (this.l) + 'px';
+        this.shape.style.width = (this.w) + 'px';
+        this.shape.style.top = this.offset(this.l) + 'px';
+        this.shape.style.left = this.offset(this.w) + 'px';
+        this.shape.classList.add('rectangle');
+        this.shapeAppend();
+    }
+    getRect() {
+        if (this.l === this.w) {
+            alert("This is a square! Using defaults...");
+            this.l = 50;
+            this.w = 100;
+        }
+    }
+    inform() {
+        infShape.innerText = "Shape: " + this.name;
+        infWidth.innerText = "Width: " + this.w;
+        infHeight.innerText = "Height: " + this.l;
+        infRadius.innerText = "Radius: N/A";
+        infArea.innerText = "Area: " + (this.l * this.w);
+        infPerimeter.innerText = "Perimeter: " + (parseInt(this.l) * 2 + parseInt(this.w) * 2);
     }
 }
 class Triangle extends Shape {

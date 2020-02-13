@@ -72,6 +72,7 @@ body {
     border-right: 100px solid transparent;
 }
 .rectangle {
+    position: absolute;
     background: green;
     opacity: 50%;
     border: 2px solid black;
